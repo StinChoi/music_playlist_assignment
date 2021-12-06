@@ -1,25 +1,27 @@
-import logo from './logo.svg';
 import './App.css';
+import React from "react";
+import Playlists from "./Playlists";
+// import SemanticDemo from "./SemanticDemo";
+import React, { Component } from "react";
+import { Container, Header, } from "semantic-ui-react";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+  state = {
+    playlists: [
+      { id: 1, artist: "Pink Floyd", album: "The Darkside of the Moon", },
+      { id: 2, artist: "Drake", album: "If You're Reading This, It's Too Late", },
+      { id: 3, artist: "Passion Pit", album: "Gossamer", },
+      { id: 4, artist: "The Growlers", album: "Dogheart II", },
+    ],
+  };
+  render() {
+    return (
+      <Container>
+        <Header as="h1">Music Playlist</Header>
+        <Playlists playlist={this.state.playlists} />
+      </Container>
+    );
+  }
 }
 
 export default App;
