@@ -2,36 +2,26 @@ import React from "react";
 import { Button, Table, } from "semantic-ui-react";
 import Playlist from "./Playlist"
 
-const Playlists = ({playlists}) => (
+const Playlists = ({ playlists }) => (
   //render data here
   // using the first table in react.semantic
   <Table celled padded>
-  <Table.Header>
-    <Table.Row>
-      <Table.HeaderCell>Artist</Table.HeaderCell>
-      <Table.HeaderCell>Album</Table.HeaderCell>
-      <Table.HeaderCell>Options</Table.HeaderCell>
-    </Table.Row>
-  </Table.Header>
-
-  <Table.Body>
-    { //code is breaking here
-      playlists.map( playlist => (    
-      <Table.Row key={playlist.id}>
-        <Table.Cell>{playlist.id}</Table.Cell>
-        <Table.Cell>{playlist.artist}</Table.Cell>
-        <Table.Cell>{playlist.album}</Table.Cell>
-        <Table.Cell>
-          <Button color="blue">
-            Delete
-          </Button>
-        </Table.Cell>
+    <Table.Header>
+      <Table.Row>
+        <Table.HeaderCell>Song</Table.HeaderCell>
+        <Table.HeaderCell>Artist</Table.HeaderCell>
+        <Table.HeaderCell>Options</Table.HeaderCell>
       </Table.Row>
-      ))
-    } 
-    {/* code breaks */}
+    </Table.Header>
+
+    <Table.Body>
+      { //code is breaking here
+        playlists.map(playlist => (
+          <Playlist key={playlist.id} {...playlist} />
+        ))
+      }
     </Table.Body>
-    </Table>
+  </Table>
 );
 
 export default Playlists;

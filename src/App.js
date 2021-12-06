@@ -1,5 +1,6 @@
 import './App.css';
 import Playlists from "./Playlists";
+// import PlaylistForm from "./PlaylistForm";
 // import SemanticDemo from "./SemanticDemo";
 import React, { Component } from "react";
 import { Container, Header, } from "semantic-ui-react";
@@ -16,8 +17,8 @@ class App extends Component {
   render() {
     return (
       <Container>
-        <Header as="h1">Bangers</Header>
-        <Playlists playlist={this.state.playlists} />
+        <Header as="h1">Some Bangers</Header>
+        <Playlists playlists={this.state.playlists} />
       </Container>
     );
   }
