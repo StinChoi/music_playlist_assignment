@@ -1,5 +1,6 @@
 import React from "react";
 import { Button, Table, } from "semantic-ui-react";
+import Playlist from "./Playlist"
 
 const Playlists = ({playlists}) => (
   //render data here

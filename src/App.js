@@ -7,16 +7,16 @@ import { Container, Header, } from "semantic-ui-react";
 class App extends Component {
   state = {
     playlists: [
-      { id: 1, artist: "Pink Floyd", album: "The Darkside of the Moon", },
-      { id: 2, artist: "Drake", album: "If You're Reading This, It's Too Late", },
-      { id: 3, artist: "Passion Pit", album: "Gossamer", },
-      { id: 4, artist: "The Growlers", album: "Dogheart II", },
+      { id: 1, song: "Go With U", artist: "BAYNK", },
+      { id: 2, song: "Best Day Ever", artist: "Mac Miller", },
+      { id: 3, song: "Sleepyhead", artist: "Passion Pit", },
+      { id: 4, song: "Tell It How It Is", artist: "The Growlers", },
     ],
   };
   render() {
     return (
       <Container>
-        <Header as="h1">Music Playlist</Header>
+        <Header as="h1">Bangers</Header>
         <Playlists playlist={this.state.playlists} />
       </Container>
     );
