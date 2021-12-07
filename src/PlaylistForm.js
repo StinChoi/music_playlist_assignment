@@ -1,8 +1,11 @@
 import React from "react";
-import { Form, } from "semantic-ui-react";
+import { Form, Button } from "semantic-ui-react";
 
 class PlaylistForm extends React.Component {
-  state = { song: "", artist: "", };
+  state = {
+    song: "", artist: "",
+    show: true,
+  };
 
   handleSubmit = (e) => {
     e.preventDefault();
@@ -12,6 +15,9 @@ class PlaylistForm extends React.Component {
 
   handleChange = (e) => {
     this.setState({ [e.target.name]: e.target.value, });
+  };
+  toggleForm = () => {
+    this.setState({ show: !this.state.show })
   };
 
   render() {
@@ -36,8 +42,8 @@ class PlaylistForm extends React.Component {
           />
           <Form.Button color="blue">Add</Form.Button>
         </Form.Group>
-      </Form>
-    )
+      </Form >
+    );
   }
 }
 

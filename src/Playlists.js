@@ -15,7 +15,7 @@ const Playlists = ({ playlists, remove }) => (
     </Table.Header>
 
     <Table.Body>
-      { //code is breaking here
+      {
         playlists.map(playlist => (
           <Playlist key={playlist.id} {...playlist} remove={remove} />
         ))

@@ -4,6 +4,7 @@ import PlaylistForm from "./PlaylistForm";
 // import SemanticDemo from "./SemanticDemo";
 import React, { Component } from "react";
 import { Container, Header, Button, Icon, Segment, } from "semantic-ui-react";
+import axios from "axios";
 
 class App extends Component {
   state = {
@@ -25,11 +26,11 @@ class App extends Component {
   removePlaylist = (id) => {
     const playlists = this.state.playlists.filter(playlist => {
       if (playlist.id !== id)
-      return playlist
+        return playlist
     });
     this.setState({ playlists: [...playlists], });
   };
-  
+
   addPlaylist = (playlistData) => {
     console.log(playlistData)
     let playlist = { id: this.getId(), ...playlistData, };
@@ -40,7 +41,7 @@ class App extends Component {
     const { showForm, } = this.state;
     return (
       <Container style={{ paddingTop: "25px" }}>
-        <Header as="h1">Some Bangers</Header>
+        <Header as="h1">Music Playlist</Header>
         <br />
         <Segment basic>
           <Button icon color="blue" onClick={this.toggleForm}>

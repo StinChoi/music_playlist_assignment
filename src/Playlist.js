@@ -1,5 +1,6 @@
 import React from "react";
 import { Button, Table, } from "semantic-ui-react";
+import PlaylistForm from "./PlaylistForm";
 
 const Playlist = ({ song, artist, remove, id }) => (
   <Table.Row>
@@ -9,7 +10,9 @@ const Playlist = ({ song, artist, remove, id }) => (
       <Button color="red" onClick={() => remove(id)}>
         Delete
       </Button>
+      <Button color="blue">Edit</Button>
     </Table.Cell>
+    <PlaylistForm song={song} id={id} artist={artist} />
   </Table.Row>
 );
 

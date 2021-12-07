@@ -1,0 +1,32 @@
+      // <div>
+        {/* <Header>Playlist Form</Header>
+        <Button onClick={this.toggleForm}>
+          {this.state.show ? "Hide" : "Show"}
+        </Button>
+        {this.state.show && (
+          <Form onSubmit={this.handleSubmit}> */}
+    //         <Form.Group widths="equal">
+    //           <Form.Input
+    //             fluid
+    //             label="Song"
+    //             placeholder="Song"
+    //             name="song"
+    //             value={this.state.song}
+    //             onChange={this.handleChange}
+    //           />
+    //           <Form.Input
+    //             fluid
+    //             label="Artist"
+    //             placeholder="Artist"
+    //             name="artist"
+    //             value={this.state.artist}
+    //             onChange={this.handleChange}
+    //           />
+    //           <Form.Button color="blue">Add</Form.Button>
+    //         </Form.Group>
+
+    //         <Button type="submit">Submit</Button>
+    //       </Form>
+    //     // )};
+    //   // </div>
+    // );
