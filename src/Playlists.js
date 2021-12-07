@@ -2,7 +2,7 @@ import React from "react";
 import { Button, Table, } from "semantic-ui-react";
 import Playlist from "./Playlist"
 
-const Playlists = ({ playlists }) => (
+const Playlists = ({ playlists, remove }) => (
   //render data here
   // using the first table in react.semantic
   <Table celled padded>
@@ -17,7 +17,7 @@ const Playlists = ({ playlists }) => (
     <Table.Body>
       { //code is breaking here
         playlists.map(playlist => (
-          <Playlist key={playlist.id} {...playlist} />
+          <Playlist key={playlist.id} {...playlist} remove={remove} />
         ))
       }
     </Table.Body>
