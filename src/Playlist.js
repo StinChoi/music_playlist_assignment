@@ -6,7 +6,7 @@ const Playlist = ({ song, artist, remove, id }) => (
     <Table.Cell>{song}</Table.Cell>
     <Table.Cell>{artist}</Table.Cell>
     <Table.Cell>
-      <Button color="blue" onClick={() => remove(id)}>
+      <Button color="red" onClick={() => remove(id)}>
         Delete
       </Button>
     </Table.Cell>

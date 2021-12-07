@@ -34,7 +34,7 @@ class PlaylistForm extends React.Component {
             value={this.state.artist}
             onChange={this.handleChange}
           />
-          <Form.Button>Add</Form.Button>
+          <Form.Button color="blue">Add</Form.Button>
         </Form.Group>
       </Form>
     )

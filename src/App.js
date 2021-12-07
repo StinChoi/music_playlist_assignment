@@ -22,18 +22,18 @@ class App extends Component {
     return Math.floor((1 + Math.random()) * 10000);
   };
 
+  removePlaylist = (id) => {
+    const playlists = this.state.playlists.filter(playlist => {
+      if (playlist.id !== id)
+      return playlist
+    });
+    this.setState({ playlists: [...playlists], });
+  };
+  
   addPlaylist = (playlistData) => {
     console.log(playlistData)
     let playlist = { id: this.getId(), ...playlistData, };
     this.setState({ playlists: [playlist, ...this.state.playlists], });
-  };
-
-  removePlaylist = (id) => {
-    const playlists = this.state.playlists.filter(playlist => {
-      if (playlist.id !== id)
-        return playlist
-    });
-    this.setState({ playlists: [...playlists], });
   };
 
   render() {
