@@ -3,7 +3,9 @@ import Playlists from "./Playlists";
 import PlaylistForm from "./PlaylistForm";
 // import SemanticDemo from "./SemanticDemo";
 import React, { Component } from "react";
-import { Container, Header, Button, Icon, Segment, } from "semantic-ui-react";
+import { Button, Icon, Segment, } from "semantic-ui-react";
+import HeaderText from "./components/HeaderText";
+import { AppContainer, Transparent } from "./components/ExportImport";
 import axios from "axios";
 
 class App extends Component {
@@ -31,6 +33,11 @@ class App extends Component {
     this.setState({ playlists: [...playlists], });
   };
 
+  editPlaylist = (editedPlaylist) => {
+    const newPlaylists = this.state.playlists.map((playlist) => playlist.id === editedPlaylist.id ? editedPlaylist : playlist);
+    this.setState({ playlists: newPlaylists });
+  }
+
   addPlaylist = (playlistData) => {
     console.log(playlistData)
     let playlist = { id: this.getId(), ...playlistData, };
@@ -40,18 +47,18 @@ class App extends Component {
   render() {
     const { showForm, } = this.state;
     return (
-      <Container style={{ paddingTop: "25px" }}>
-        <Header as="h1">Music Playlist</Header>
+      <AppContainer style={{ paddingTop: "25px" }}>
+        <HeaderText fSize="large">Music Playlist</HeaderText>
         <br />
-        <Segment basic>
+        <Segment as={Transparent}>
           <Button icon color="blue" onClick={this.toggleForm}>
             <Icon name={this.state.showForm ? 'angle double up' : 'angle double down'} />
           </Button>
           {this.state.showForm ? <PlaylistForm add={this.addPlaylist} /> : null}
         </Segment>
         <br />
-        <Playlists playlists={this.state.playlists} remove={this.removePlaylist} />
-      </Container>
+        <Playlists playlists={this.state.playlists} remove={this.removePlaylist} editPlaylist={this.editPlaylist} />
+      </AppContainer>
     );
   }
 }
